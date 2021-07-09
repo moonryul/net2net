@@ -1,13 +1,13 @@
 import numpy as np
 import tensorflow as tf
-from tensorflow.keras.layers import Layer, Dense
-from tensorflow.keras import Model
+from tensorflow.keras.layers import Layer, Dense # Dense is nn.Linear (without activation) in Pytorch
+from tensorflow.keras import Model  #Model.call is Module.forward in Pytorch
 import json
 
 from net2net import net2deeper, net2wider
 
 
-class Layers(Layer):
+class Layers(Layer): # Layer is nn.Module in Pytorch
     def __init__(self, hidden_dims=None):
         super(Layers, self).__init__()
         self.layers = []
